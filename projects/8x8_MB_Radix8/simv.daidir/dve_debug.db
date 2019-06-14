@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<opml version="1.0">
+	<head>
+		<title>VCS dump file for DVE debugging</title>
+		<vcsVersion>D-2010.06-SP1_Full64</vcsVersion>
+		<dateCreated>Wed Jun 12 11:54:36 2019</dateCreated>
+	</head>
+	<body>
+		<!-- VCS compile options -->
+		<vcsCompileOptions text="/usr/local/packages/synopsys/vcs/amd64/bin/vcs1 -Mcc=gcc -Mcplusplus=g++ -Masflags= -Mloader=ld -Mcfl= -pipe -O -I/usr/local/packages/synopsys/vcs/include  -Mldflags= /usr/lib/x86_64-linux-gnu/crt1.o /usr/lib/x86_64-linux-gnu/crti.o /usr/lib/x86_64-linux-gnu/crtn.o  -Mout=simv -Mamsrun= -Mvcsaceobjs= -Mcmodrun= -Mobjects= /usr/local/packages/synopsys/vcs/amd64/lib/libvirsim.so /usr/local/packages/synopsys/vcs/amd64/lib/liberrorinf.so /usr/local/packages/synopsys/vcs/amd64/lib/libsnpsmalloc.so  -Msaverestoreobj=/usr/local/packages/synopsys/vcs/amd64/lib/vcs_save_restore_new.o -Mcrt0= -Mcrtn= -Mcsrc= -Msyslibs=-ldl -lm  -full64 +v2k -gui -cm_xmldb -ucli +cli+4 +vcsd +itf+/usr/local/packages/synopsys/vcs/amd64/lib/vcsd.tab +vpi -debug=3 +memcbk -sverilog +vpi -gen_obj ./test1.v ../../../rtl/systolic2d_s/8x8_MB_Radix_8/mb8_radix8.v "/>
+		<!-- File list for the whole design -->
+		<fileList>
+			<file fid="0" path="/home/titan/engrkashif/ABBlocks/projects/systolic2ds/8x8_MB_Radix8/test1.v" />
+			<file fid="1" path="/home/titan/engrkashif/ABBlocks/rtl/systolic2d_s/8x8_MB_Radix_8/mb8_radix8.v" />
+		</fileList>
+		<!-- Include file list for the whole design -->
+		<includeFileList>
+		</includeFileList>
+		<!-- Encrypted codes list for the whole design -->
+		<encryptedCodesList>
+		</encryptedCodesList>
+		<!-- Inactive codes list for the whole design -->
+		<inactiveCodesList>
+		</inactiveCodesList>
+		<!-- Compile options UUM based -->
+		<langKeywords>
+			<svFiles fid="0-1" />
+		</langKeywords>
+		<!--  Case insensitive file list -->
+		<caseInsensitiveFiles fid="" />
+		<!-- Macro definition list for the whole design --> 
+		<macroDefinitionList>
+		</macroDefinitionList>
+		<!-- Macro value list for the whole design --> 
+		<macroValueList>
+		</macroValueList>
+	</body>
+</opml>
