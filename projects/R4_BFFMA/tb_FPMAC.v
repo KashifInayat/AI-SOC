@@ -53,29 +53,8 @@ wire [CWIDTH-1:0] result;
      idealExp=idealfloat[30:23];
      idealsig={1'b1,idealfloat[CSIG_WIDTH-1:0]};
       #5
-   	 $display("INPUTS: A=%x, B=%x, C=%x, Index:%d\n", A, B, C, i);
-     $display("                        EXPONENT Unpack                        ");
-	 $display("aSign=%b, aExp=%b, aMant=%b\n", uut.aSign,uut.aExp, uut.aSig);
-	 $display("bSign=%b, bExp=%b, bMant=%b\n", uut.bSign,uut.bExp, uut.bSig);
-	 $display("cSign=%b, cExp=%b, cMant=%b\n", uut.cSign,uut.cExp, uut.cSig);
-	 $display("aExp=%d, bExp=%d, cExp=%d,resExp=%d,shamt=%d\n", uut.aExp,uut.bExp, uut.cExp, uut.resExp1,uut.shamt);
- 	 $display("                        ALIGN                        ");	 
-	 $display("cSig=%b, cAligned_pre=%b,\n",uut.cSig, uut.CAligned_pre);
-	 $display("sticky=%b, effectiveOp=%b,cExpIsSmall=%b, CAligned=%b\n",uut.sticky, uut.effectiveOp,uut.EC.cExpIsSmall,uut.CAligned);
-	 $display("cMid=%b, cLow=%b, cHigh=%b\n",uut.C_mid, uut.C_low,uut.C_hi);
- 	 
-	 $display("Multiplier: Sum=%b, carry=%b, prod=%x\n",uut.sum, uut.carry,uut.prodT);
-	 $display("                        CSA                        ");	
-	 $display("Sum      =%b\n",uut.ADD.in1);
-	 $display("carry    =%b\n",uut.ADD.in2);
-	 $display("CAligned =%b\n",uut.ADD.in3);
-	 $display("Res_s =%b\n",uut.ADD.s);
-     $display("Res_c =%b\n",uut.carry_add_wgt);
-	  $display("Prenormalized=%b\n",uut.NORMALIZE.prenormalized);
-	 $display("Normalized1=%b\n",uut.NORMALIZE.normalized1);
-	 $display("Normalized2=%b\n",uut.NORMALIZE.normalized2);
-	 $display("Normalized=%b\n",uut.NORMALIZE.normalized);
-	 $display("Result=%x, Ideal=%x\n",result, idealfloat);
+		$display("INPUTS: A=%x, B=%x, C=%x, Result=%\n", A, B, C, result);
+     $
 	    $display("===============================================================");
 	 	 	 
    end
@@ -83,7 +62,7 @@ wire [CWIDTH-1:0] result;
   
   end
  //wire sig_compare = (uut.result_pre[CSIG_WIDTH-1:0]!=idealsig)
- wire res_compare = result!=idealfloat;
+// wire res_compare = result!=idealfloat;
 /*   initial begin
  A=0; B=0; C=0;
 
