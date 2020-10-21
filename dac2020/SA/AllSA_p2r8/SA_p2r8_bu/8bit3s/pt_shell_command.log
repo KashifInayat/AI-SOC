@@ -1,0 +1,97 @@
+#@ # 
+#@ # Running pt_shell Version E-2010.12-SP2 for amd64 -- Feb 24, 2011
+#@ # Date:   Tue Nov 12 13:07:17 2019
+#@ # Run by: inayatmz@saturn
+#@ 
+
+source /usr/local/packages/synopsys/primetime/admin/setup/.synopsys_pt.setup
+#@ #
+#@ # .synopsys_pt.setup: Initialization File for PrimeTime
+#@ #
+#@ 
+#@ 
+#@ #
+#@ # Enable stack trace output on fatal.  Not available for all architectures.
+#@ #
+#@ if { $sh_arch == "sparcOS5" || $sh_arch == "hpux10" ||      $sh_arch == "hp32" || $sh_arch == "linux" } {
+#@   set_unix_variable SYNOPSYS_TRACE ""
+#@ }
+#@ 
+#@ #
+#@ # Variable settings
+#@ #
+#@ 
+#@ #
+#@ # Synopsys strongly recommends that you use new variable message
+#@ # tracing for debugging purposes only.
+#@ #
+#@ set sh_new_variable_message true
+#@ 
+#@ #
+#@ # Synopsys strongly recommends that you uncomment the following command
+#@ # in order to set sh_command_abbrev_mode to the value "Command-Line-Only".
+#@ # Command abbreviation is intended as an interactive convenience.  Using
+#@ # abbreviations in scripts can cause commands to fail in subsequent releases.
+#@ # 
+#@ #set sh_command_abbrev_mode "Command-Line-Only"
+#@ 
+#@ #
+#@ # Some useful aliases
+#@ #
+#@ alias list_commands		help
+#@ alias report_constraints	report_constraint
+#@ alias report_clocks		report_clock
+#@ 
+#@ #
+#@ # The alias for get_clock was added when get_clock_network_objects
+#@ # was introduced, as it conflicts with get_clocks (and get_clock is a
+#@ # typical abbreviation for get_clocks)
+#@ #
+#@ alias get_clock get_clocks
+#@ 
+#@ 
+#@ #
+#@ #
+#@ # The alias of q to quit is commented out.  Remove the comment 
+#@ # character if you want this alias.  Some users find that having 
+#@ # this particular alias causes problems when mixed with page-mode
+#@ # for reports - an accidental repeated 'q' not only cancels the
+#@ # output but exits the tool.
+#@ #
+#@ #alias q quit
+#@ 
+#@ # -- End source /usr/local/packages/synopsys/primetime/admin/setup/.synopsys_pt.setup
+
+set array_size 128
+source -echo -verbose power_vector.ptcl
+#@ set search_path [list .]
+#@ 
+#@ set liberty_dir /soc/vlsi/PDK/SAED32_EDK/references/orca/dc/models
+#@ set stdcell_dir /soc/vlsi/PDK/SAED32_EDK/lib/stdcell_hvt/db_nldm
+#@ 
+#@ set link_library "*  $stdcell_dir/saed32hvt_ss0p95v125c.db    $liberty_dir/saed32io_ss0p95v125c_2p25v.db  "
+#@ set target_library "  $stdcell_dir/saed32hvt_ss0p95v125c.db    $liberty_dir/saed32io_ss0p95v125c_2p25v.db  "
+#@ 
+#@ set power_enable_analysis TRUE
+#@ set power_analysis_mode averaged
+#@ #set power_analysis_mode time_based
+#@ 
+#@ read_ddc designs_$array_size\_$array_size\/postdc_netlistr42s.ddc
+#@ 
+#@ link_design
+#@ 
+#@ current_design 
+#@ 
+#@ #read_parasitics top_level.spef
+#@ #current_instance core
+#@ 
+#@ read_saif ./netlist.saif -strip_path test
+#@ #.uut1
+#@ check_power
+#@ update_power
+#@ 
+#@ #report_power -verbose -hierarchy > power.txt
+#@ 
+#@ report_power -verbose  >> final_reports_$array_size\_$array_size\/power.txt
+#@ sh cat final_reports_$array_size\_$array_size\/power.txt
+#@ exit

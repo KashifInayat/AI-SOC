@@ -1,0 +1,169 @@
+
+                            PrimeTime (R)
+                           PrimeTime (R) SI
+                           PrimeTime (R) PX
+           Version E-2010.12-SP2 for amd64 -- Feb 24, 2011
+              Copyright (c) 1988-2011 by Synopsys, Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys, Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+set search_path [list .]
+.
+set liberty_dir /soc/vlsi/PDK/SAED32_EDK/references/orca/dc/models
+/soc/vlsi/PDK/SAED32_EDK/references/orca/dc/models
+set stdcell_dir /soc/vlsi/PDK/SAED32_EDK/lib/stdcell_hvt/db_nldm
+/soc/vlsi/PDK/SAED32_EDK/lib/stdcell_hvt/db_nldm
+set link_library "*  $stdcell_dir/saed32hvt_ss0p95v125c.db    $liberty_dir/saed32io_ss0p95v125c_2p25v.db  "
+*  /soc/vlsi/PDK/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db    /soc/vlsi/PDK/SAED32_EDK/references/orca/dc/models/saed32io_ss0p95v125c_2p25v.db  
+set target_library "  $stdcell_dir/saed32hvt_ss0p95v125c.db    $liberty_dir/saed32io_ss0p95v125c_2p25v.db  "
+  /soc/vlsi/PDK/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db    /soc/vlsi/PDK/SAED32_EDK/references/orca/dc/models/saed32io_ss0p95v125c_2p25v.db  
+set power_enable_analysis TRUE
+TRUE
+set power_analysis_mode averaged
+averaged
+#set power_analysis_mode time_based
+read_ddc designs/postdc_netlistr42s1.ddc
+Warning: This file contains packed commands (constraints) that are not
+         compatible with this version of the tool.  All instances of the
+         following commands will be removed, which may result in data loss:
+  Command #202 differs:
+    File version: dcxref_define_file name %s -fid %d
+    Tool version: <does not exist>
+  Command #230 differs:
+    File version: dcxref_define_file_checksum -fid %d -checksum %s
+    Tool version: <does not exist>
+  Command #234 differs:
+    File version: dcxref_define_hier_name name %s -hid %d
+    Tool version: <does not exist>
+  Command #235 differs:
+    File version: dcxref_set_srcpos_with_hid -object %p -fid %d -start_line %d -hid %d -origin %d
+    Tool version: <does not exist>
+Warning: DDC file was written with a newer version of dc_shell.
+         Some embedded commands may be ignored. (DDC-12)
+Warning: Ignoring unknown packed command #202: dcxref_define_file (DDC-13)
+Warning: Ignoring unknown packed command #230: dcxref_define_file_checksum (DDC-13)
+Warning: Ignoring unknown packed command #235: dcxref_set_srcpos_with_hid (DDC-13)
+Warning: Ignoring unknown packed command #234: dcxref_define_hier_name (DDC-13)
+1
+#read_verilog ./designs/postdc_netlist.v
+link_design
+Loading db file '/soc/vlsi/PDK/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
+Loading db file '/soc/vlsi/PDK/SAED32_EDK/references/orca/dc/models/saed32io_ss0p95v125c_2p25v.db'
+Linking design mb32_top...
+Information: 243 (82.65%) library cells are unused in library saed32hvt_ss0p95v125c.....
+Information: 65 (100.00%) library cells are unused in library saed32io_ss0p95v125c_2p25v.....
+Information: total 308 library cells are unused.
+Information: Issuing set_operating_conditions for setting analysis mode on_chip_variation. (PTE-037)
+set_operating_conditions -analysis_type on_chip_variation  -library [get_libs {saed32hvt_ss0p95v125c.db:saed32hvt_ss0p95v125c}] 
+Design 'mb32_top' was successfully linked.
+Information: Removing 2 unneeded designs..... (LNK-034)
+1
+current_design
+{"mb32_top"}
+#read_parasitics top_level.spef
+read_saif ./netlist.saif -strip_path test_m_booth_mult/uut1
+Information: Checked out license 'PrimeTime-PX' (PT-019)
+
+======================================================================
+Summary:
+Total number of nets = 6935
+Number of annotated nets = 6934 (99.99%)
+Total number of leaf cells = 6674
+Number of fully annotated leaf cells = 6673 (99.99%)
+======================================================================
+
+1
+check_power
+Warning: Some timing arcs have been disabled for breaking timing loops
+	or because of constant propagation. Use the 'report_disable_timing'
+	command to get the list of these disabled timing arcs. (PTE-003)
+Information: Using automatic max wire load selection group 'predcaps'. (ENV-003)
+Information: Using automatic min wire load selection group 'predcaps'. (ENV-003)
+Information: Checking 'out_of_table_range'.
+Warning: There are 932 out_of_range ramps.
+Warning: There are 150 out_of_range loads.
+Information: Checking 'missing_table'.
+Information: Checking 'missing_function'.
+0
+update_power
+Information: Running averaged power analysis... (PWR-601)
+1
+report_power -verbose -hierarchy > final_reports/power.txt
+current_instance uut
+uut
+report_power -verbose
+****************************************
+Report : Averaged Power
+	-verbose
+Design : mb32_top/uut (mb32_td)
+Version: E-2010.12-SP2
+Date   : Tue Nov 19 15:13:56 2019
+****************************************
+
+Library(s) Used:
+
+    saed32hvt_ss0p95v125c (File: /soc/vlsi/PDK/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db)
+    saed32io_ss0p95v125c_2p25v (File: /soc/vlsi/PDK/SAED32_EDK/references/orca/dc/models/saed32io_ss0p95v125c_2p25v.db)
+
+
+Operating Conditions: ss0p95v125c   Library: saed32hvt_ss0p95v125c
+Wire Load Model Mode: enclosed
+
+Cell               Design       Wire_model  Library       Selection_type
+--------------------------------------------------------------------------------
+                   mb32_top     35000       saed32hvt_ss0p95v125c
+                                                          user-specified
+uut                mb32_td      35000       saed32hvt_ss0p95v125c
+                                                          inherited from higher level
+uut/uut0           mb32         35000       saed32hvt_ss0p95v125c
+                                                          inherited from higher level
+
+Power-specific unit information :
+    Voltage Units = 1 V
+    Capacitance Units = 1 pf
+    Time Units = 1 ns
+    Dynamic Power Units = 1 W
+    Leakage Power Units = 1 W
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+clock_network           3.468e-03    0.0000    0.0000 3.468e-03 (28.78%)  i
+register                8.299e-04 2.495e-04 1.214e-04 1.201e-03 ( 9.96%)  
+combinational           5.554e-03 1.586e-03 2.417e-04 7.382e-03 (61.26%)  
+sequential                 0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+
+  Net Switching Power  = 1.836e-03   (15.23%)
+  Cell Internal Power  = 9.852e-03   (81.76%)
+  Cell Leakage Power   = 3.631e-04   ( 3.01%)
+                         ---------
+Total Power            =    0.0121  (100.00%)
+
+1
+report_power -verbose  >> final_reports/power.txt
+Information: Defining new variable 'stdcell_dir'. (CMD-041)
+Information: Defining new variable 'liberty_dir'. (CMD-041)
+pt_shell> quit
+Updating preference file: /home/titan/engrkashif/.synopsys_pt_prefs.tcl
+
+Timing updates: 1 (1 implicit, 0 explicit) (0 incremental, 1 full)
+Noise updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full)
+Maximum memory usage for this session: 42.18 MB
+CPU usage for this session: 2 seconds 
+Elapsed time for this session: 343843 seconds
+Diagnostics summary: 6 warnings, 8 informationals
+
+Thank you for using pt_shell!

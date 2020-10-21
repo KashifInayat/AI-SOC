@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : mb32_top
+Version: K-2015.06-SP2-1
+Date   : Thu Nov 14 16:58:14 2019
+****************************************
+
+
+Library(s) Used:
+
+    saed32hvt_ss0p95v125c (File: /soc/vlsi/PDK/SAED32_EDK_01132015/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db)
+
+
+Operating Conditions: ss0p95v125c   Library: saed32hvt_ss0p95v125c
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+mb32_top               35000             saed32hvt_ss0p95v125c
+mb32_td                35000             saed32hvt_ss0p95v125c
+mb32                   35000             saed32hvt_ss0p95v125c
+
+
+Global Operating Voltage = 0.95 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+mb32_top                                828.786 7.08e+03 3.49e+08 8.26e+03 100.0
+  uut (mb32_td)                         828.731 6.78e+03 3.39e+08 7.95e+03  96.2
+    uut0 (mb32)                         817.401 6.18e+03 3.19e+08 7.31e+03  88.5
+1

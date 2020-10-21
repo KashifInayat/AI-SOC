@@ -1,0 +1,80 @@
+0 
+38
++cli+4
++define+INPUT_FILE_NAMEX=""./inputs/xbitwidth_32_n_10000.txt""
++define+INPUT_FILE_NAMEY=""./inputs/ybitwidth_32_n_10000.txt""
++define+Multiplier
++define+WEIGHT_FILE_NAME=""""
++define+WORLD_SIZE=
++incdir+./
++itf+/usr/local/packages/synopsys/vcs/amd64/lib/vcsd.tab
++memcbk
++v2k
++vcsd
++vpi
++vpi
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -O -I/usr/local/packages/synopsys/vcs/include
+-Mcmodrun=
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mldflags= /usr/lib/x86_64-linux-gnu/crt1.o /usr/lib/x86_64-linux-gnu/crti.o /usr/lib/x86_64-linux-gnu/crtn.o
+-Mloader=ld
+-Mobjects= /usr/local/packages/synopsys/vcs/amd64/lib/libvirsim.so /usr/local/packages/synopsys/vcs/amd64/lib/liberrorinf.so /usr/local/packages/synopsys/vcs/amd64/lib/libsnpsmalloc.so
+-Mout=simv
+-Msaverestoreobj=/usr/local/packages/synopsys/vcs/amd64/lib/vcs_save_restore_new.o
+-Msyslibs=-ldl -lm
+-Mvcsaceobjs=
+-Xcbug=0x1
+-cm_xmldb
+-debug=3
+-full64
+-gen_obj
+./designs/postdc_netlistr82s.v
+./test1.v
+/soc/vlsi/PDK/SAED32_EDK/lib/stdcell_hvt/verilog/saed32nm_hvt.v
+/usr/local/packages/synopsys/vcs/amd64/bin/vcs1
+27
+XDG_SESSION_ID=c97
+XDG_SESSION_COOKIE=95eb7fe92c05b415e07c32930000a8e2-1574067268.208416-472846793
+XDG_RUNTIME_DIR=/run/user/1033
+VMR_MODE_FLAG=64
+VIRSIMHOME=/usr/local/packages/synopsys/vcs/gui/virsim
+VCS_MX_HOME_INTERNAL=1
+VCS_MODE_FLAG=64
+VCS_HOME=/usr/local/packages/synopsys/vcs
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=amd64
+UNAME=/bin/uname
+TOOL_HOME=/usr/local/packages/synopsys/vcs/amd64
+SSH_TTY=/dev/pts/18
+SSH_CONNECTION=117.16.246.24 51948 10.80.89.142 22
+SSH_CLIENT=117.16.246.24 51948 22
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+PYTHONPATH=/home/chung/shared/research/nnc2:/home/chung/shared/research/caffe/python:/home/chung/shared/research
+PYLEARN2_DATA_PATH=/home/chung/data
+PACKAGES=/usr/local/packages/synopsys
+OVA_UUM=0
+NNC_HOME=/home/chung/shared/research/nnc2
+LESSOPEN=| /usr/bin/lesspipe %s
+LESSCLOSE=/usr/bin/lesspipe %s %s
+JAVA_HOME=/usr/local/java
+INSIGHT_HOME=/home/chung/shared/research/insight
+CLASS_PATH=.
+0
+4
+1516255454 /soc/vlsi/PDK/SAED32_EDK/lib/stdcell_hvt/verilog/saed32nm_hvt.v
+1573718353 ./designs/postdc_netlistr82s.v
+1574144035 ./test1.v
+1290747186 /usr/local/packages/synopsys/vcs/amd64/lib/vcsd.tab
+4
+0 
+1290747872 /usr/local/packages/synopsys/vcs/amd64/lib/libvirsim.so
+1290747606 /usr/local/packages/synopsys/vcs/amd64/lib/liberrorinf.so
+1290747378 /usr/local/packages/synopsys/vcs/amd64/lib/libsnpsmalloc.so
+1574144249 simv.daidir

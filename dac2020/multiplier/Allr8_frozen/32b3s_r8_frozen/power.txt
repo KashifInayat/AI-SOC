@@ -1,0 +1,43 @@
+****************************************
+Report : Averaged Power
+	-hierarchy
+	-verbose
+Design : mb32_top
+Version: E-2010.12-SP2
+Date   : Tue Nov 19 15:16:51 2019
+****************************************
+
+Library(s) Used:
+
+    saed32hvt_ss0p95v125c (File: /soc/vlsi/PDK/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db)
+    saed32io_ss0p95v125c_2p25v (File: /soc/vlsi/PDK/SAED32_EDK/references/orca/dc/models/saed32io_ss0p95v125c_2p25v.db)
+
+
+Operating Conditions: ss0p95v125c   Library: saed32hvt_ss0p95v125c
+Wire Load Model Mode: enclosed
+
+Cell               Design       Wire_model  Library       Selection_type
+--------------------------------------------------------------------------------
+                   mb32_top     35000       saed32hvt_ss0p95v125c
+                                                          user-specified
+uut                mb32_td      35000       saed32hvt_ss0p95v125c
+                                                          inherited from higher level
+uut/uut0           mb32         35000       saed32hvt_ss0p95v125c
+                                                          inherited from higher level
+
+Power-specific unit information :
+    Voltage Units = 1 V
+    Capacitance Units = 1 pf
+    Time Units = 1 ns
+    Dynamic Power Units = 1 W
+    Leakage Power Units = 1 W
+
+
+
+                                      Switch   Int      Leak      Total
+Hierarchy                             Power    Power    Power     Power    %
+--------------------------------------------------------------------------------
+mb32_top                              1.74e-03 9.42e-03 3.48e-04  1.15e-02 100.0
+  uut (mb32_td)                       1.74e-03 9.17e-03 3.39e-04  1.13e-02  97.8
+    uut0 (mb32)                       1.69e-03 8.55e-03 3.18e-04  1.06e-02  91.7
+1

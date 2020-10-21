@@ -1,0 +1,174 @@
+****************************************
+Report : Averaged Power
+	-verbose
+Design : mb32_top/uut (mb32_td)
+Version: E-2010.12-SP2
+Date   : Mon Nov 11 15:39:12 2019
+****************************************
+
+Library(s) Used:
+
+    saed32hvt_ss0p95v125c (File: /soc/vlsi/PDK/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db)
+    saed32io_ss0p95v125c_2p25v (File: /soc/vlsi/PDK/SAED32_EDK/references/orca/dc/models/saed32io_ss0p95v125c_2p25v.db)
+
+
+Operating Conditions: ss0p95v125c   Library: saed32hvt_ss0p95v125c
+Wire Load Model Mode: enclosed
+
+Cell               Design       Wire_model  Library       Selection_type
+--------------------------------------------------------------------------------
+                   mb32_top     35000       saed32hvt_ss0p95v125c
+                                                          user-specified
+uut                mb32_td      35000       saed32hvt_ss0p95v125c
+                                                          inherited from higher level
+uut/uut0           mb32         35000       saed32hvt_ss0p95v125c
+                                                          inherited from higher level
+
+Power-specific unit information :
+    Voltage Units = 1 V
+    Capacitance Units = 1 pf
+    Time Units = 1 ns
+    Dynamic Power Units = 1 W
+    Leakage Power Units = 1 W
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+clock_network           2.421e-03    0.0000    0.0000 2.421e-03 (26.86%)  i
+register                5.876e-04 1.177e-04 1.121e-04 8.174e-04 ( 9.07%)  
+combinational           4.077e-03 1.491e-03 2.064e-04 5.774e-03 (64.07%)  
+sequential                 0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+
+  Net Switching Power  = 1.608e-03   (17.85%)
+  Cell Internal Power  = 7.085e-03   (78.62%)
+  Cell Leakage Power   = 3.185e-04   ( 3.53%)
+                         ---------
+Total Power            = 9.012e-03  (100.00%)
+
+1
+****************************************
+Report : Averaged Power
+	-verbose
+Design : mb32_top/uut (mb32_td)
+Version: E-2010.12-SP2
+Date   : Thu Nov 14 17:00:21 2019
+****************************************
+
+Library(s) Used:
+
+    saed32hvt_ss0p95v125c (File: /soc/vlsi/PDK/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db)
+    saed32io_ss0p95v125c_2p25v (File: /soc/vlsi/PDK/SAED32_EDK/references/orca/dc/models/saed32io_ss0p95v125c_2p25v.db)
+
+
+Operating Conditions: ss0p95v125c   Library: saed32hvt_ss0p95v125c
+Wire Load Model Mode: enclosed
+
+Cell               Design       Wire_model  Library       Selection_type
+--------------------------------------------------------------------------------
+                   mb32_top     35000       saed32hvt_ss0p95v125c
+                                                          user-specified
+uut                mb32_td      35000       saed32hvt_ss0p95v125c
+                                                          inherited from higher level
+uut/uut0           mb32         35000       saed32hvt_ss0p95v125c
+                                                          inherited from higher level
+
+Power-specific unit information :
+    Voltage Units = 1 V
+    Capacitance Units = 1 pf
+    Time Units = 1 ns
+    Dynamic Power Units = 1 W
+    Leakage Power Units = 1 W
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+clock_network           2.845e-03    0.0000    0.0000 2.845e-03 (33.39%)  i
+register                6.897e-04 2.096e-04 1.324e-04 1.032e-03 (12.10%)  
+combinational           3.342e-03 1.097e-03 2.064e-04 4.646e-03 (54.51%)  
+sequential                 0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+
+  Net Switching Power  = 1.306e-03   (15.33%)
+  Cell Internal Power  = 6.878e-03   (80.70%)
+  Cell Leakage Power   = 3.388e-04   ( 3.97%)
+                         ---------
+Total Power            = 8.523e-03  (100.00%)
+
+1
+****************************************
+Report : Averaged Power
+	-verbose
+Design : mb32_top/uut (mb32_td)
+Version: E-2010.12-SP2
+Date   : Tue Nov 19 15:16:51 2019
+****************************************
+
+Library(s) Used:
+
+    saed32hvt_ss0p95v125c (File: /soc/vlsi/PDK/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db)
+    saed32io_ss0p95v125c_2p25v (File: /soc/vlsi/PDK/SAED32_EDK/references/orca/dc/models/saed32io_ss0p95v125c_2p25v.db)
+
+
+Operating Conditions: ss0p95v125c   Library: saed32hvt_ss0p95v125c
+Wire Load Model Mode: enclosed
+
+Cell               Design       Wire_model  Library       Selection_type
+--------------------------------------------------------------------------------
+                   mb32_top     35000       saed32hvt_ss0p95v125c
+                                                          user-specified
+uut                mb32_td      35000       saed32hvt_ss0p95v125c
+                                                          inherited from higher level
+uut/uut0           mb32         35000       saed32hvt_ss0p95v125c
+                                                          inherited from higher level
+
+Power-specific unit information :
+    Voltage Units = 1 V
+    Capacitance Units = 1 pf
+    Time Units = 1 ns
+    Dynamic Power Units = 1 W
+    Leakage Power Units = 1 W
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+clock_network           3.794e-03    0.0000    0.0000 3.794e-03 (33.72%)  i
+register                9.201e-04 2.794e-04 1.324e-04 1.332e-03 (11.84%)  
+combinational           4.457e-03 1.462e-03 2.064e-04 6.125e-03 (54.44%)  
+sequential                 0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+
+  Net Switching Power  = 1.741e-03   (15.48%)
+  Cell Internal Power  = 9.171e-03   (81.51%)
+  Cell Leakage Power   = 3.388e-04   ( 3.01%)
+                         ---------
+Total Power            =    0.0113  (100.00%)
+
+1

@@ -1,0 +1,57 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : mb32_top
+Version: K-2015.06-SP2-1
+Date   : Thu Nov 14 16:58:15 2019
+****************************************
+
+Operating Conditions: ss0p95v125c   Library: saed32hvt_ss0p95v125c
+Wire Load Model Mode: enclosed
+
+  Startpoint: uut/uut0/CLK_r_REG716_S2
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: uut/uut0/CLK_r_REG522_S3
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mb32_top           35000                 saed32hvt_ss0p95v125c
+  mb32               35000                 saed32hvt_ss0p95v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  uut/uut0/CLK_r_REG716_S2/CLK (DFFX2_HVT)                0.00       0.00 r
+  uut/uut0/CLK_r_REG716_S2/QN (DFFX2_HVT)                 0.17       0.17 r
+  uut/uut0/U2987/Y (XOR3X2_HVT)                           0.26       0.43 f
+  uut/uut0/U3522/Y (XNOR2X2_HVT)                          0.14       0.57 r
+  uut/uut0/U3521/Y (OA21X1_HVT)                           0.11       0.68 r
+  uut/uut0/U2186/Y (XNOR2X2_HVT)                          0.14       0.82 r
+  uut/uut0/U2184/Y (AO21X1_HVT)                           0.12       0.94 r
+  uut/uut0/U3804/Y (NAND2X0_HVT)                          0.07       1.00 f
+  uut/uut0/U3793/Y (AND2X1_HVT)                           0.09       1.09 f
+  uut/uut0/U307/Y (OR2X2_HVT)                             0.07       1.17 f
+  uut/uut0/U305/Y (NAND2X0_HVT)                           0.05       1.21 r
+  uut/uut0/CLK_r_REG522_S3/RSTB (DFFSSRX1_HVT)            0.00       1.21 r
+  data arrival time                                                  1.21
+
+  clock CLK (rise edge)                                   1.36       1.36
+  clock network delay (ideal)                             0.00       1.36
+  uut/uut0/CLK_r_REG522_S3/CLK (DFFSSRX1_HVT)             0.00       1.36 r
+  library setup time                                     -0.15       1.21
+  data required time                                                 1.21
+  --------------------------------------------------------------------------
+  data required time                                                 1.21
+  data arrival time                                                 -1.21
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.01
+
+
+1

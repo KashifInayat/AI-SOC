@@ -1,0 +1,1148 @@
+                                        
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+                                        
+              Version K-2015.06-SP2-1 for linux64 - Sep 09, 2015 
+                                        
+                    Copyright (c) 1988 - 2015 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+# module load syn/syn/2013
+# run this file with: dc_shell-xg-t -f dcopt.tcl | tee dcopt.out
+# evince /usr/local/packages/SAED32_EDK/lib/stdcell_rvt/doc/SAED32.28nm_Digital_Standard_Cell_Library_b100_01312012.pdf
+# or http://esc.inu.ac.kr/~chung/SAED_DOC.pdf
+set search_path [list .]
+.
+set edk_home /soc/vlsi/PDK/SAED32_EDK_01132015/
+/soc/vlsi/PDK/SAED32_EDK_01132015/
+set io_dir $edk_home/lib/io_std
+/soc/vlsi/PDK/SAED32_EDK_01132015//lib/io_std
+set pll_dir $edk_home/lib/pll
+/soc/vlsi/PDK/SAED32_EDK_01132015//lib/pll
+set stdcell_dir $edk_home/lib/stdcell_hvt
+/soc/vlsi/PDK/SAED32_EDK_01132015//lib/stdcell_hvt
+## Setup DB
+set io_db_dir $io_dir/db_nldm
+/soc/vlsi/PDK/SAED32_EDK_01132015//lib/io_std/db_nldm
+set pll_db_dir $pll_dir/db_nldm
+/soc/vlsi/PDK/SAED32_EDK_01132015//lib/pll/db_nldm
+set stdcell_db_dir $stdcell_dir/db_nldm
+/soc/vlsi/PDK/SAED32_EDK_01132015//lib/stdcell_hvt/db_nldm
+set synthetic_library dw_foundation.sldb
+dw_foundation.sldb
+set link_library "*  $stdcell_db_dir/saed32hvt_ss0p95v125c.db   $pll_db_dir/saed32pll_ss0p95v125c_2p25v.db  $io_db_dir/saed32io_fc_ss0p95v125c_2p25v.db     $synthetic_library"
+*  /soc/vlsi/PDK/SAED32_EDK_01132015//lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db   /soc/vlsi/PDK/SAED32_EDK_01132015//lib/pll/db_nldm/saed32pll_ss0p95v125c_2p25v.db  /soc/vlsi/PDK/SAED32_EDK_01132015//lib/io_std/db_nldm/saed32io_fc_ss0p95v125c_2p25v.db     dw_foundation.sldb
+set target_library "  $stdcell_db_dir/saed32hvt_ss0p95v125c.db  $pll_db_dir/saed32pll_ss0p95v125c_2p25v.db   $io_db_dir/saed32io_fc_ss0p95v125c_2p25v.db  "
+  /soc/vlsi/PDK/SAED32_EDK_01132015//lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db  /soc/vlsi/PDK/SAED32_EDK_01132015//lib/pll/db_nldm/saed32pll_ss0p95v125c_2p25v.db   /soc/vlsi/PDK/SAED32_EDK_01132015//lib/io_std/db_nldm/saed32io_fc_ss0p95v125c_2p25v.db  
+## Setup DB Done
+#aet bitwidth 8
+read_file -f verilog ./p2r8_8bit2s.v
+Loading db file '/soc/vlsi/PDK/SAED32_EDK_01132015/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
+Loading db file '/soc/vlsi/PDK/SAED32_EDK_01132015/lib/pll/db_nldm/saed32pll_ss0p95v125c_2p25v.db'
+Loading db file '/soc/vlsi/PDK/SAED32_EDK_01132015/lib/io_std/db_nldm/saed32io_fc_ss0p95v125c_2p25v.db'
+Loading db file '/usr/local/packages/synopsys/design_compiler/libraries/syn/dw_foundation.sldb'
+Loading db file '/usr/local/packages/synopsys/design_compiler/libraries/syn/gtech.db'
+Loading db file '/usr/local/packages/synopsys/design_compiler/libraries/syn/standard.sldb'
+  Loading link library 'saed32hvt_ss0p95v125c'
+  Loading link library 'saed32pll_ss0p95v125c_2p25v'
+  Loading link library 'saed32io_fc_ss0p95v125c_2p25v'
+  Loading link library 'gtech'
+Loading verilog file '/home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/p2r8_8bit2s.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/p2r8_8bit2s.v
+Warning:  /home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/p2r8_8bit2s.v:3: Parameter keyword used in local parameter declaration. (VER-329)
+Warning:  /home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/p2r8_8bit2s.v:80: Parameter keyword used in local parameter declaration. (VER-329)
+
+Inferred memory devices in process
+	in routine mb8 line 246 in file
+		'/home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/p2r8_8bit2s.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     pipereg_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/pre_process_be.db:pre_process_be'
+Loaded 21 designs.
+Current design is 'pre_process_be'.
+pre_process_be booth_encoder mb8 INVBLOCK XXOR1 BLOCK0 BLOCK1 BLOCK2 BLOCK1A BLOCK2A DBLCADDER_32_32 PRESTAGE_32 DBLCTREE_32 DBLC_0_32 DBLC_1_32 DBLC_2_32 DBLC_3_32 XORSTAGE_32 booth_sel FULL_ADDER HALF_ADDER
+read_file -f verilog ./mb8_with_load.v
+Loading verilog file '/home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/mb8_with_load.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/mb8_with_load.v
+Warning:  /home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/mb8_with_load.v:2: Parameter keyword used in local parameter declaration. (VER-329)
+
+Inferred memory devices in process
+	in routine mb8_with_load line 24 in file
+		'/home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/mb8_with_load.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       s1_reg        | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|       d1_reg        | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|       t1_reg        | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|       q1_reg        | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|       n1_reg        | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|       my1_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|      tmy1_reg       | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+|    product1_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/mb8_with_load.db:mb8_with_load'
+Loaded 1 design.
+Current design is 'mb8_with_load'.
+mb8_with_load
+#read_file -f verilog ./topdelay2s.v
+set reports_dir reports
+reports
+set final_reports_dir final_reports
+final_reports
+if { ! [ file exists $reports_dir ] } {
+         file mkdir $reports_dir
+}
+if { ! [ file exists $final_reports_dir ] } { 
+         file mkdir $final_reports_dir 
+} 
+if { ! [ file exists designs] } {
+         file mkdir designs
+}
+#set max_opcon saed32rvt_ff0p85v125c
+#set_operating_conditions -min ff1p16v125c  -max ss0p95v125c
+# I don't know why DC cannot support MCMM correctly, so I put only one corner here for now
+#set_operating_conditions -max ss0p95v125c
+##
+##
+# we want our chip to operate 3Ghz 
+##
+#set_ungroup objectfalse
+set_dont_retime [get_cell s1*]
+1
+set_dont_retime [get_cell d1*]
+1
+set_dont_retime [get_cell t1*]
+1
+set_dont_retime [get_cell q1*]
+1
+set_dont_retime [get_cell n1*]
+1
+set_dont_retime [get_cell my1*]
+1
+set_dont_retime [get_cell tmy1*]
+1
+set_dont_retime [get_cell product1*]
+1
+set_register_type -exact [get_cells s1*] -flip_flop DFFX1_HVT
+Warning: Reference PLL contains internal pins with clock attribute. (TIM-103)
+1
+set_register_type -exact [get_cells d1*] -flip_flop DFFX1_HVT
+1
+set_register_type -exact [get_cells t1*] -flip_flop DFFX1_HVT
+1
+set_register_type -exact [get_cells q1*] -flip_flop DFFX1_HVT
+1
+set_register_type -exact [get_cells n1*] -flip_flop DFFX1_HVT
+1
+set_register_type -exact [get_cells my1*] -flip_flop DFFX1_HVT
+1
+set_register_type -exact [get_cells tmy1*] -flip_flop DFFX1_HVT
+1
+set_register_type -exact [get_cells product1*] -flip_flop DFFX1_HVT
+1
+set current_design mb8
+mb8
+#get_cell sbuf*/*
+#set_dont_touch [get_cell sbuf*/*]
+ungroup -all -flatten
+Information: Changed wire load model for 'XXOR1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'XXOR1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'XXOR1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'XXOR1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'XXOR1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'XXOR1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'XXOR1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'XXOR1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'XXOR1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'XXOR1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'XXOR1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'XXOR1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'XXOR1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'XXOR1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'XORSTAGE_32' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2A' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2A' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2A' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2A' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2A' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2A' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'INVBLOCK' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'INVBLOCK' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'INVBLOCK' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'INVBLOCK' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'INVBLOCK' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'INVBLOCK' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'INVBLOCK' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'INVBLOCK' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DBLC_3_32' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1A' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1A' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1A' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1A' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'INVBLOCK' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'INVBLOCK' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'INVBLOCK' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'INVBLOCK' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DBLC_2_32' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2A' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK2A' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'INVBLOCK' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'INVBLOCK' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DBLC_1_32' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK1A' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'INVBLOCK' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DBLC_0_32' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DBLCTREE_32' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'INVBLOCK' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK0' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK0' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK0' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK0' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK0' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK0' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK0' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK0' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK0' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK0' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK0' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK0' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK0' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'BLOCK0' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'PRESTAGE_32' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DBLCADDER_32_32' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'FULL_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'FULL_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'FULL_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'FULL_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'FULL_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'HALF_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'HALF_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'HALF_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'HALF_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'HALF_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'HALF_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'HALF_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'HALF_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'HALF_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'HALF_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'FULL_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'FULL_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'FULL_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'FULL_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'FULL_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'FULL_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'FULL_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'FULL_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'FULL_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'FULL_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'FULL_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'HALF_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'HALF_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'HALF_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'HALF_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'HALF_ADDER' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'booth_sel' from '(none)' to 'ForQA'. (OPT-170)
+Information: Updating graph... (UID-83)
+1
+#get_cell sbuf*
+#optimize_registers
+#set current_design mb16_top
+set current_design mb8_with_load
+mb8_with_load
+# 100 mhz
+# set the constraint for flop-to-flop paths
+#create_clock CLK -period [expr 1000.0 /775]
+#create_clock CLK -period [expr 1000.0 /730]
+#create_clock CLK -period 1.26
+#set target_clock_period 1.24
+set target_clock_period 1.57
+1.57
+create_clock CLK -period $target_clock_period
+1
+#.26
+set_driving_cell -lib_cell DFFX1_HVT [remove_from_collection [remove_from_collection [all_inputs] CLK] RST]  -pin Q
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+1
+set_input_delay 0.20 -clock CLK [all_inputs]
+1
+# set the constraint for paths starting from primary inputs
+#set_input_delay 0 -clock CLK [all_inputs]
+remove_input_delay [get_ports "CLK RST"]
+1
+# set the constraint for paths starting from primary inputs
+set_output_delay 0 -clock CLK [all_outputs]
+1
+#optimize_registers
+# this is another way to set the constraint for primary input-to-output paths. Use this for combinational logic circuits.
+# set_max_delay 0.33 -from [all_inputs] -to [all_outputs]
+# first compile
+#set_dont_touch systolic_array_2D
+set compile_disable_hierarchical_inverter_opt true
+true
+#set_register_type -exact [get_cells uut/mx_reg*] -flip_flop DFFX1_HVT
+#set_register_type -exact [get_cells uut/my_reg*] -flip_flop DFFX1_HVT
+#set_dont_use {saed32hvt_ss0p95v125c/DFFX2_HVT saed32hvt_ss0p95v125c/DFFSSRX2_HVT saed32hvt_ss0p95v125c/DFFSSRX1_HVT}
+compile_ultra -gate_clock -no_autoungroup -retime
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | K-2015.06-DWBB_201506.2 |     *     |
+| Licensed DW Building Blocks        | K-2015.06-DWBB_201506.2 |     *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+Information: Retiming is enabled. SVF file must be used for formal verification. (OPT-1210)
+
+Information: There are 6 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'mb8_with_load'
+
+  Loading target library 'saed32pll_ss0p95v125c_2p25v'
+  Loading target library 'saed32io_fc_ss0p95v125c_2p25v'
+Loaded alib file './alib-52/saed32hvt_ss0p95v125c.db.alib'
+Loaded alib file './alib-52/saed32pll_ss0p95v125c_2p25v.db.alib' (placeholder)
+Loaded alib file './alib-52/saed32io_fc_ss0p95v125c_2p25v.db.alib' (placeholder)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'mb8'
+  Processing 'mb8_with_load'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'PMT3_HVT' in the library 'saed32hvt_ss0p95v125c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'PMT2_HVT' in the library 'saed32hvt_ss0p95v125c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'PMT1_HVT' in the library 'saed32hvt_ss0p95v125c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT3_HVT' in the library 'saed32hvt_ss0p95v125c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT2_HVT' in the library 'saed32hvt_ss0p95v125c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT1_HVT' in the library 'saed32hvt_ss0p95v125c' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+Information: Performing clock-gating on design mb8_with_load. (PWR-730)
+Information: Performing clock-gating on design mb8. (PWR-730)
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
+
+  Beginning Constant Register Removal
+  -----------------------------------
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
+
+  Beginning Isolate Ports
+  -----------------------
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
+
+  Beginning Delay Optimization
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:05    1711.1      0.00       0.0       4.2                           25487498.0000
+    0:00:05    1711.1      0.00       0.0       4.2                           25487498.0000
+    0:00:05    1711.1      0.00       0.0       4.2                           25487498.0000
+    0:00:05    1711.1      0.00       0.0       4.2                           25487498.0000
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:05    1707.2      0.00       0.0       4.2                           25027166.0000
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:06    1707.2      0.00       0.0       4.2                           24898268.0000
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+    0:00:06    1727.9      0.00       0.0       0.0                           26664616.0000
+    0:00:06    1727.9      0.00       0.0       0.0                           26664616.0000
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:06    1727.9      0.00       0.0       0.0                           26664616.0000
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:06    1709.2      0.00       0.0       0.0                           23154018.0000
+    0:00:06    1707.6      0.00       0.0       0.0                           23050492.0000
+    0:00:06    1707.6      0.00       0.0       0.0                           23050492.0000
+    0:00:06    1707.6      0.00       0.0       0.0                           23050492.0000
+    0:00:06    1707.6      0.00       0.0       0.0                           23050492.0000
+    0:00:06    1711.4      0.00       0.0       0.0                           23143588.0000
+    0:00:06    1711.4      0.00       0.0       0.0                           23143588.0000
+    0:00:07    1711.4      0.00       0.0       0.0                           23143588.0000
+    0:00:07    1711.4      0.00       0.0       0.0                           23143588.0000
+    0:00:07    1710.6      0.00       0.0       0.0                           23051104.0000
+Loading db file '/soc/vlsi/PDK/SAED32_EDK_01132015/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
+Loading db file '/soc/vlsi/PDK/SAED32_EDK_01132015/lib/pll/db_nldm/saed32pll_ss0p95v125c_2p25v.db'
+Loading db file '/soc/vlsi/PDK/SAED32_EDK_01132015/lib/io_std/db_nldm/saed32io_fc_ss0p95v125c_2p25v.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+  Loading target library 'saed32pll_ss0p95v125c_2p25v'
+  Loading target library 'saed32io_fc_ss0p95v125c_2p25v'
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+#optimize_registers
+#set_dont_touch core
+#set_structure false
+#compile ultra
+#compile_ultra -top
+#optimize_registers
+# create the scan chains
+# insert_dft
+#set_dont_touch core
+# second compile
+#compile_ultra -incr -no_autoungroup
+#optimize_registers
+#redirect change_names { change_names -rules verilog -hierarchy -verbose }
+#remove_cell [get_cell sbuf*]
+report_qor > $reports_dir/qor_report.txt
+report_constraint -all_violators > $reports_dir/violator_report.txt
+report_register -level_sensitive > $reports_dir/latch_report.txt
+report_clock_gating > $reports_dir/clock_gating.txt
+report_area
+ 
+****************************************
+Report : area
+Design : mb8_with_load
+Version: K-2015.06-SP2-1
+Date   : Tue Sep 15 12:35:52 2020
+****************************************
+
+Library(s) Used:
+
+    saed32hvt_ss0p95v125c (File: /soc/vlsi/PDK/SAED32_EDK_01132015/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db)
+
+Number of ports:                          135
+Number of nets:                           522
+Number of cells:                          439
+Number of combinational cells:            342
+Number of sequential cells:                96
+Number of macros/black boxes:               0
+Number of buf/inv:                         65
+Number of references:                       5
+
+Combinational area:                837.658624
+Buf/Inv area:                       84.121665
+Noncombinational area:             627.735701
+Macro/Black Box area:                0.000000
+Net Interconnect area:             245.202399
+
+Total cell area:                  1465.394324
+Total area:                       1710.596724
+1
+report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : mb8_with_load
+Version: K-2015.06-SP2-1
+Date   : Tue Sep 15 12:35:52 2020
+****************************************
+
+Operating Conditions: ss0p95v125c   Library: saed32hvt_ss0p95v125c
+Wire Load Model Mode: enclosed
+
+  Startpoint: t[0] (input port clocked by CLK)
+  Endpoint: uut0/R_46 (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mb8_with_load      8000                  saed32hvt_ss0p95v125c
+  mb8                8000                  saed32hvt_ss0p95v125c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock CLK (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.20       0.20 f
+  t[0] (in)                                0.05       0.25 f
+  uut0/t[0] (mb8)                          0.00       0.25 f
+  uut0/U120/Y (NAND2X0_HVT)                0.07       0.32 r
+  uut0/U121/Y (NAND3X0_HVT)                0.13       0.46 f
+  uut0/U13/Y (XOR2X1_HVT)                  0.23       0.68 r
+  uut0/U46/Y (INVX0_HVT)                   0.05       0.74 f
+  uut0/U92/Y (XNOR2X1_HVT)                 0.17       0.90 r
+  uut0/U187/CO (FADDX1_HVT)                0.17       1.08 r
+  uut0/U286/Y (NAND2X0_HVT)                0.09       1.17 f
+  uut0/U293/Y (OA21X1_HVT)                 0.14       1.31 f
+  uut0/U309/Y (NAND2X0_HVT)                0.05       1.36 r
+  uut0/U310/Y (NAND4X0_HVT)                0.11       1.47 f
+  uut0/R_46/D (DFFX1_HVT)                  0.00       1.47 f
+  data arrival time                                   1.47
+
+  clock CLK (rise edge)                    1.57       1.57
+  clock network delay (ideal)              0.00       1.57
+  uut0/R_46/CLK (DFFX1_HVT)                0.00       1.57 r
+  library setup time                      -0.09       1.48
+  data required time                                  1.48
+  -----------------------------------------------------------
+  data required time                                  1.48
+  data arrival time                                  -1.47
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1
+report_power -hier > $reports_dir/power.txt
+## to measure qor
+set_dont_touch [get_designs mb8]
+1
+read_file -f verilog ./mb8_td.v
+Loading verilog file '/home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/mb8_td.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/mb8_td.v
+Warning:  /home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/mb8_td.v:2: Parameter keyword used in local parameter declaration. (VER-329)
+
+Inferred memory devices in process
+	in routine mb8_td line 24 in file
+		'/home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/mb8_td.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       s1_reg        | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|       d1_reg        | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|       t1_reg        | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|       q1_reg        | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|       n1_reg        | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|       my1_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|      tmy1_reg       | Flip-flop |  10   |  Y  | N  | N  | N  | N  | N  | N  |
+|    product1_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/mb8_td.db:mb8_td'
+Loaded 1 design.
+Current design is 'mb8_td'.
+mb8_td
+read_file -f verilog ./topdelay2s.v
+Loading verilog file '/home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/topdelay2s.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/topdelay2s.v
+Warning:  /home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/topdelay2s.v:3: Parameter keyword used in local parameter declaration. (VER-329)
+Presto compilation completed successfully.
+Current design is now '/home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/mb8_top.db:mb8_top'
+Loaded 1 design.
+Current design is 'mb8_top'.
+mb8_top
+create_clock CLK -period $target_clock_period
+1
+compile_ultra -gate_clock -no_autoungroup 
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 67 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'mb8_top'
+
+  Loading target library 'saed32pll_ss0p95v125c_2p25v'
+  Loading target library 'saed32io_fc_ss0p95v125c_2p25v'
+Loaded alib file './alib-52/saed32hvt_ss0p95v125c.db.alib'
+Loaded alib file './alib-52/saed32pll_ss0p95v125c_2p25v.db.alib' (placeholder)
+Loaded alib file './alib-52/saed32io_fc_ss0p95v125c_2p25v.db.alib' (placeholder)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'mb8_td'
+  Processing 'mb8_top'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'PMT3_HVT' in the library 'saed32hvt_ss0p95v125c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'PMT2_HVT' in the library 'saed32hvt_ss0p95v125c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'PMT1_HVT' in the library 'saed32hvt_ss0p95v125c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT3_HVT' in the library 'saed32hvt_ss0p95v125c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT2_HVT' in the library 'saed32hvt_ss0p95v125c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT1_HVT' in the library 'saed32hvt_ss0p95v125c' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+Information: Skipping clock gating on design mb8_top, since there are no registers. (PWR-806)
+Information: Performing clock-gating on design mb8_td. (PWR-730)
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
+
+  Beginning Constant Register Removal
+  -----------------------------------
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+  Global Optimization (Phase 50)
+  Global Optimization (Phase 51)
+  Global Optimization (Phase 52)
+  Global Optimization (Phase 53)
+  Global Optimization (Phase 54)
+  Global Optimization (Phase 55)
+  Global Optimization (Phase 56)
+  Global Optimization (Phase 57)
+  Global Optimization (Phase 58)
+  Global Optimization (Phase 59)
+  Global Optimization (Phase 60)
+  Global Optimization (Phase 61)
+  Global Optimization (Phase 62)
+  Global Optimization (Phase 63)
+  Global Optimization (Phase 64)
+  Global Optimization (Phase 65)
+  Global Optimization (Phase 66)
+  Global Optimization (Phase 67)
+  Global Optimization (Phase 68)
+  Global Optimization (Phase 69)
+  Global Optimization (Phase 70)
+  Global Optimization (Phase 71)
+  Global Optimization (Phase 72)
+  Global Optimization (Phase 73)
+  Global Optimization (Phase 74)
+  Global Optimization (Phase 75)
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
+
+  Beginning Isolate Ports
+  -----------------------
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
+
+  Beginning Delay Optimization
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:02    1690.8      0.00       0.0       2.4                           22920324.0000
+  Global Optimization (Phase 76)
+  Global Optimization (Phase 77)
+  Global Optimization (Phase 78)
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%, saed32cell_svt 0.00%
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+  Global Optimization (Phase 79)
+  Global Optimization (Phase 80)
+  Global Optimization (Phase 81)
+  Global Optimization (Phase 82)
+  Global Optimization (Phase 83)
+  Global Optimization (Phase 84)
+  Global Optimization (Phase 85)
+  Global Optimization (Phase 86)
+  Global Optimization (Phase 87)
+  Global Optimization (Phase 88)
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+    0:00:02    1692.8      0.00       0.0       0.0                           23012650.0000
+Loading db file '/soc/vlsi/PDK/SAED32_EDK_01132015/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db'
+Loading db file '/soc/vlsi/PDK/SAED32_EDK_01132015/lib/pll/db_nldm/saed32pll_ss0p95v125c_2p25v.db'
+Loading db file '/soc/vlsi/PDK/SAED32_EDK_01132015/lib/io_std/db_nldm/saed32io_fc_ss0p95v125c_2p25v.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+  Loading target library 'saed32pll_ss0p95v125c_2p25v'
+  Loading target library 'saed32io_fc_ss0p95v125c_2p25v'
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+write_file -f verilog -hier -output designs/postdc_netlistp2r82s.v
+Writing verilog file '/home/titan/engrkashif/AISOC/2.DAC2020/multiplier/Allp2r8_frozen_corr/8b1s_p2r8_frozen_corr/designs/postdc_netlistp2r82s.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write_file -f ddc -hier -output designs/postdc_netlistp2r82s.ddc
+Writing ddc file 'designs/postdc_netlistp2r82s.ddc'.
+1
+report_timing
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : mb8_top
+Version: K-2015.06-SP2-1
+Date   : Tue Sep 15 12:35:58 2020
+****************************************
+
+Operating Conditions: ss0p95v125c   Library: saed32hvt_ss0p95v125c
+Wire Load Model Mode: enclosed
+
+  Startpoint: uut/t1_reg[0]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: uut/uut0/R_46
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mb8_top            8000                  saed32hvt_ss0p95v125c
+  mb8_td             8000                  saed32hvt_ss0p95v125c
+  mb8                8000                  saed32hvt_ss0p95v125c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock CLK (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  uut/t1_reg[0]/CLK (DFFX1_HVT)            0.00       0.00 r
+  uut/t1_reg[0]/Q (DFFX1_HVT)              0.24       0.24 f
+  uut/uut0/t[0] (mb8)                      0.00       0.24 f
+  uut/uut0/U120/Y (NAND2X0_HVT)            0.07       0.31 r
+  uut/uut0/U121/Y (NAND3X0_HVT)            0.13       0.44 f
+  uut/uut0/U13/Y (XOR2X1_HVT)              0.23       0.67 r
+  uut/uut0/U46/Y (INVX0_HVT)               0.05       0.72 f
+  uut/uut0/U92/Y (XNOR2X1_HVT)             0.17       0.89 r
+  uut/uut0/U187/CO (FADDX1_HVT)            0.17       1.06 r
+  uut/uut0/U286/Y (NAND2X0_HVT)            0.09       1.16 f
+  uut/uut0/U293/Y (OA21X1_HVT)             0.14       1.29 f
+  uut/uut0/U309/Y (NAND2X0_HVT)            0.05       1.35 r
+  uut/uut0/U310/Y (NAND4X0_HVT)            0.11       1.46 f
+  uut/uut0/R_46/D (DFFX1_HVT)              0.00       1.46 f
+  data arrival time                                   1.46
+
+  clock CLK (rise edge)                    1.57       1.57
+  clock network delay (ideal)              0.00       1.57
+  uut/uut0/R_46/CLK (DFFX1_HVT)            0.00       1.57 r
+  library setup time                      -0.09       1.48
+  data required time                                  1.48
+  -----------------------------------------------------------
+  data required time                                  1.48
+  data arrival time                                  -1.46
+  -----------------------------------------------------------
+  slack (MET)                                         0.02
+
+
+1
+report_timing > $final_reports_dir/delay.txt
+current_design mb8_td
+Current design is 'mb8_td'.
+{mb8_td}
+report_area
+ 
+****************************************
+Report : area
+Design : mb8_td
+Version: K-2015.06-SP2-1
+Date   : Tue Sep 15 12:35:58 2020
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    saed32hvt_ss0p95v125c (File: /soc/vlsi/PDK/SAED32_EDK_01132015/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95v125c.db)
+
+Number of ports:                          135
+Number of nets:                           517
+Number of cells:                          434
+Number of combinational cells:            337
+Number of sequential cells:                96
+Number of macros/black boxes:               0
+Number of buf/inv:                         60
+Number of references:                       3
+
+Combinational area:                829.780159
+Buf/Inv area:                       76.243200
+Noncombinational area:             629.768852
+Macro/Black Box area:                0.000000
+Net Interconnect area:             233.260612
+
+Total cell area:                  1459.549012
+Total area:                       1692.809624
+1
+report_area > $final_reports_dir/area.txt
+report_register > $final_reports_dir/register.txt
+#remove_design
+dc_shell> quit
+
+Thank you...
