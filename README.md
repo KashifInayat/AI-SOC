@@ -4,7 +4,7 @@ Efficient Hardware for AI
 
 -Here DAC2020 directory contains the all desigs we implemented for the factored tensor processing unit, work was accepted at DAC2020, California, USA.
 
-Please read here for the article:
+Please click here to read the article:
 
 https://ieeexplore.ieee.org/abstract/document/9218585/
 
