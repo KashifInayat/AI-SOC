@@ -12,4 +12,4 @@ https://ieeexplore.ieee.org/abstract/document/9218585/
 
 -TensorProcessing4x4_OutputStationary is the earlier directories for new project I working. It is a complete 4x4TensorProcessingCore with efficient double buffer.
 
-
+-CPAF-Gemmini is a project in which we performed the factoring of CPA on practical open soruce gemmini accelerator. 
