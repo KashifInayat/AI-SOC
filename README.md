@@ -1,4 +1,4 @@
-# AI-ASICs
+# AI-SOC
 Efficient Hardware for AI
 
 
