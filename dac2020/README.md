@@ -4,7 +4,7 @@ This repo contains the verilog code of unsigned multipliers and tensor processin
 
 - Factored Systolic Array Tensor Processing (https://ieeexplore.ieee.org/abstract/document/9218585)
 
-## Prerequisites
+## Prerequisites:
 To use these files, you must have synopsys tools:  VCS, DC, PrimeTime PX, PrimePower
 
 
@@ -47,7 +47,7 @@ Use the following commands to get the corresponding tool:
 ./run_pt.sh  
 ```
 
-## Citation
+## Citation:
 If you find FSA useful in your research, please consider citing:
 ```
 @inproceedings{ullah2020factored,
@@ -60,7 +60,7 @@ If you find FSA useful in your research, please consider citing:
 }
 ```
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+## Contributing:
+- Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure you have valid license to proceed with the synopsys tools.
+- Please make sure you have valid license to proceed with the synopsys tools.
