@@ -11,12 +11,26 @@ To use these files, you must have synopsys tools:  VCS, DC, PrimeTime PX, PrimeP
 
 
 ## SAs usage:
-1) copy the right multiplier into  ./designs/mult.ddc
-2) dc_shell-xg-t -f dcopt_PE.tcl (to synthesize PE)
-3) ./run_dc.sh [array_size]  (.e.g., ./run_dc.sh 16) for DC
-4) ./run_vcs.sh [array_zie] for VCS
-5) ./run_pt.sh [array_size] for PrimeTime Px/PrimePower
-
+- Before proceeding to SAs design, you need to copy the right multiplier into  
+```bash
+./designs/mult.ddc
+```
+- Next you need to synthesize the Processing Element
+```bash
+dc_shell-xg-t -f dcopt_PE.tcl 
+```
+- For DC
+```bash
+./run_dc.sh [array_size]  (.e.g., ./run_dc.sh 16) for DC
+```
+- For VCS
+```bash
+./run_vcs.sh [array_zie] for VCS
+```
+- For Px Prime Power
+```bash
+./run_pt.sh [array_size] for PrimeTime Px/PrimePower
+```
 ## Multiplier usage:
 Use the following commands to get the corresponding tool:
 
@@ -28,15 +42,14 @@ Use the following commands to get the corresponding tool:
 ```bash
 ./run_vcs.sh for VCS
 ```
-For Px Prime Power
+- For Px Prime Power
 ```bash
 ./run_pt.sh  for PrimeTime Px/PrimePower
 ```
 
-##Citation
+## Citation
 If you find FSA useful in your research, please consider citing:
 ```
-
 @inproceedings{ullah2020factored,
   title={Factored radix-8 systolic array for tensor processing},
   author={Ullah, Inayat and Inayat, Kashif and Yang, Joon-Sung and Chung, Jaeyong},
