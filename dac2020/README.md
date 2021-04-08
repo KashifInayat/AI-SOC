@@ -25,7 +25,7 @@ dc_shell-xg-t -f dcopt_PE.tcl
 ```
 - For VCS
 ```bash
-./run_vcs.sh [array_zie] 
+./run_vcs.sh [array_size] 
 ```
 - For Px Prime Power
 ```bash
