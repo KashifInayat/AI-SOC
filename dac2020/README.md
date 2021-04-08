@@ -2,7 +2,7 @@
 
 This repo contains the verilog code of unsigned multipliers and tensor processing cores 8x8,16x16,32x32,64x64,128x128 with TCL and Shell files of synopsys tools. This work published in DAC2020 and entitled:
 
-Factored Systolic Array Tensor Processing (https://ieeexplore.ieee.org/abstract/document/9218585)
+- Factored Systolic Array Tensor Processing (https://ieeexplore.ieee.org/abstract/document/9218585)
 
 ## Prerequisites
 To use these files, you must have synopsys tools:  VCS, DC, PrimeTime PX, PrimePower
@@ -21,30 +21,30 @@ dc_shell-xg-t -f dcopt_PE.tcl
 ```
 - For DC
 ```bash
-./run_dc.sh [array_size]  (.e.g., ./run_dc.sh 16) for DC
+./run_dc.sh [array_size]  (.e.g., ./run_dc.sh 16) 
 ```
 - For VCS
 ```bash
-./run_vcs.sh [array_zie] for VCS
+./run_vcs.sh [array_zie] 
 ```
 - For Px Prime Power
 ```bash
-./run_pt.sh [array_size] for PrimeTime Px/PrimePower
+./run_pt.sh [array_size]
 ```
 ## Multiplier usage:
 Use the following commands to get the corresponding tool:
 
 - For DC
 ```bash
-./run_dc.sh  for DC
+./run_dc.sh  
 ```
 - For VCS
 ```bash
-./run_vcs.sh for VCS
+./run_vcs.sh 
 ```
 - For Px Prime Power
 ```bash
-./run_pt.sh  for PrimeTime Px/PrimePower
+./run_pt.sh  
 ```
 
 ## Citation
