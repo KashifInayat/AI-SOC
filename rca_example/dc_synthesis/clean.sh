@@ -1,0 +1,1 @@
+rm *.syn *.mr *.log *.out *.svf *.pvl
